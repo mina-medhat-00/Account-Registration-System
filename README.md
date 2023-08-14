@@ -32,11 +32,9 @@ This project is an Account Registration System built using Node.js, EJS, Bootstr
 
 ```bash
 git clone https://github.com/your-username/your-project.git
-
-Install project dependencies:
-
-
 ```
+
+2. Install project dependencies:
 
 ```bash
 
@@ -44,15 +42,16 @@ cd your-project
 npm install
 ```
 
-Set up your MongoDB database URL in config/database.js.
+3. Set up your MongoDB database URL in config/database.js.
 
-Run the application:
+4. Run the application:
 
 ```
 npm start
+```
+
 Access the application in your web browser at http://localhost:3000.
 
-```
 
 ## Project Structure
 
