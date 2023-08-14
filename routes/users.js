@@ -89,4 +89,15 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
+// Logout Handle
+router.get("/logout", (req, res) => {
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash("success_msg", "Successfully logged out");
+    res.redirect("/users/login");
+  });
+});
+
 module.exports = router;
