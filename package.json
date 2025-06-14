@@ -1,13 +1,12 @@
 {
-  "name": "node-with-passport-authentication",
+  "name": "account-registration-system",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

@@ -30,28 +30,17 @@ This project is an Account Registration System built using Node.js, EJS, Bootstr
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/your-username/your-project.git
-```
+`git clone https://github.com/mina-medhat-00/Account-Registration-System.git`
 
 2. Install project dependencies:
 
-```bash
+`npm install`
 
-cd your-project
-npm install
-```
+3. Run the application:
 
-3. Set up your MongoDB database URL in config/database.js.
-
-4. Run the application:
-
-```
-npm start
-```
+`npm start`
 
 Access the application in your web browser at http://localhost:3000.
-
 
 ## Project Structure
 
@@ -61,7 +50,3 @@ Access the application in your web browser at http://localhost:3000.
 - routes/: Express routes for handling different parts of the application.
 - views/: EJS templates for rendering dynamic views.
 - public/: Static files (stylesheets, scripts, images).
-
-## License
-
-This project is licensed under the MIT License.

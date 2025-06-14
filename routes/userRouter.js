@@ -1,18 +1,17 @@
-const express = require("express");
-const bcrypt = require("bcryptjs");
-const router = express.Router();
-const passport = require("passport");
+import express from "express";
+import bcrypt from "bcryptjs";
+import passport from "passport";
+import User from "../models/userModel.js";
 
-// User model
-const User = require("../models/User");
+const router = express.Router();
 
 // Login page
-router.get("/login", (req, res) => res.render("login"));
+router.get("/login", (_, res) => res.render("login"));
 
 // Register page
-router.get("/register", (req, res) => res.render("register"));
+router.get("/register", (_, res) => res.render("register"));
 
-// Register Handle
+// Handle Register
 router.post("/register", (req, res) => {
   const { name, email, password, password2 } = req.body;
   let errors = [];
@@ -24,7 +23,7 @@ router.post("/register", (req, res) => {
   if (password !== password2) {
     errors.push({ msg: "Passwords do not match" });
   }
-  // Check pass length
+  // Check password length
   if (password.length < 6) {
     errors.push({ msg: "Passwords should be at least 6 characters" });
   }
@@ -80,16 +79,16 @@ router.post("/register", (req, res) => {
   }
 });
 
-// Login Handle
+// Handle Login
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/dashboard",
-    failureRedirect: "/users/login",
+    failureRedirect: "/users/register",
     failureFlash: true,
   })(req, res, next);
 });
 
-// Logout Handle
+// Handle Logout
 router.get("/logout", (req, res) => {
   req.logout(function (err) {
     if (err) {
@@ -100,4 +99,4 @@ router.get("/logout", (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;
